@@ -1,1 +1,563 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/favicon.ico"><title>React App</title><link href="/static/css/main.ae5c9612.css" rel="stylesheet"></head><body><div id="root"></div><script type="text/javascript" src="/static/js/main.82597df1.js"></script></body></html>
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jinhyeong Jang | Backend Engineer</title>
+  <meta name="description" content="백엔드 엔지니어 장진형 포트폴리오 - 성능 최적화, SRE, AI 파이프라인" />
+  <meta property="og:title" content="Jinhyeong Jang | Backend Engineer" />
+  <meta property="og:description" content="실서비스 운영/성능 최적화/AI 데이터 파이프라인/오픈소스 기여" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        securityLevel: 'loose',
+        fontFamily: 'Inter, sans-serif'
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav-content">
+      <div class="logo">JANG.DEV</div>
+      <nav class="nav-links">
+        <a href="#featured">Featured</a>
+        <a href="#projects">Projects</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="https://github.com/coldmans" target="_blank">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div><span class="hero-label">Backend Engineer</span></div>
+      <h1>Building Efficient<br>& Reliable Systems.</h1>
+      <p>
+        안녕하세요, 백엔드 엔지니어 <strong>장진형</strong>입니다.<br>
+        수치에 기반한 <strong>성능 최적화</strong>와 <strong>안정적인 서비스 운영</strong>을 최우선 가치로 둡니다.<br>
+        비즈니스 요구사항을 효율적인 기술로 실현하는 데 집중합니다.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#featured" class="btn btn-primary">View Case Study</a>
+        <a href="https://github.com/coldmans" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+      </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section id="featured">
+      <h2 class="section-title">Featured Project</h2>
+
+      <!-- Main Summary Card -->
+      <article class="featured-card">
+        <div class="featured-content">
+          <div class="featured-label">
+            Released Service
+            <span
+              style="margin-left:8px; background:rgba(255,255,255,0.1); padding:4px 8px; border-radius:99px; font-size:0.75rem; border:1px solid rgba(255,255,255,0.2);">Solo
+              Project 👤</span>
+          </div>
+          <h3 class="featured-title">INU Timetable</h3>
+          <p class="featured-desc">
+            에브리타임보다 빠른 업데이트를 제공하는 <strong>인천대 학사 지원 플랫폼</strong>입니다.<br>
+            전교생 20%가 선택했으며, Gemini 2.0 기반의 데이터 파이프라인과 극한의 인프라 최적화로 운영 비용을 최소화했습니다.
+          </p>
+
+          <div class="featured-tags">
+            <span class="hero-label">Spring Boot</span>
+            <span class="hero-label">PostgreSQL</span>
+            <span class="hero-label">Gemini 2.0 Flash</span>
+            <span class="hero-label">Terraform</span>
+            <span class="hero-label">GCP e2-small</span>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <a href="https://inuu-timetable.vercel.app" target="_blank" class="btn btn-primary">Live Service</a>
+            <a href="https://github.com/coldmans/inu_timetable" target="_blank" class="btn btn-secondary"
+              style="margin-left: 10px;">Repo</a>
+          </div>
+        </div>
+
+
+      </article>
+
+      <!-- Deep Dive 0: System Architecture -->
+      <div class="tech-detail-section">
+        <h3 class="tech-detail-title">System Architecture</h3>
+        <div class="mermaid"
+          style="display: flex; justify-content: center; background: rgba(255, 255, 255, 0.02); padding: 20px; border-radius: 12px; border: 1px solid var(--border-light);">
+          graph LR
+          User["Users<br />(Student)"] --> Edge["Vercel Edge<br />CDN & Cache"]
+          Edge --> Boot["Spring Boot<br />GCP e2-small"]
+          Boot --> DB[("PostgreSQL<br />Supabase")]
+          Boot --> AI{{"Gemini 2.0<br />Vertex AI"}}
+
+          style User fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style Edge fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style Boot fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style DB fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style AI fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+
+          linkStyle default stroke:#444,stroke-width:2px;
+        </div>
+      </div>
+
+      <!-- CI/CD Pipeline -->
+      <div class="tech-detail-section">
+        <h3 class="tech-detail-title">Automated Deployment Pipeline</h3>
+        <div class="mermaid"
+          style="display: flex; justify-content: center; background: rgba(255, 255, 255, 0.02); padding: 20px; border-radius: 12px; border: 1px solid var(--border-light); margin-top: 1rem;">
+          graph LR
+          subgraph Frontend [Frontend Pipeline]
+          GitFE[GitHub FE] --> Vercel[Vercel<br>Auto Build & Deploy]
+          Vercel --> Live[Global Edge]
+          end
+
+          subgraph Backend [Backend Pipeline]
+          GitBE[GitHub BE] --> Actions[GitHub Actions<br>Docker Build]
+          Actions --> Registry[GCP Registry]
+          Registry --> Compute[Compute Engine<br>Compose & Run]
+          end
+
+          %% Invisible link to force horizontal layout
+          Live ~~~ GitBE
+
+          style Frontend fill:transparent,stroke:#333,stroke-width:1px,color:#888
+          style Backend fill:transparent,stroke:#333,stroke-width:1px,color:#888
+
+          style GitFE fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style Vercel fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style Live fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+
+          style GitBE fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style Actions fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style Registry fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+          style Compute fill:#1a1a1a,stroke:#333,stroke-width:1px,color:#fff
+
+          linkStyle default stroke:#444,stroke-width:2px;
+        </div>
+      </div>
+      <!-- Deep Dive 1: Business Impact -->
+      <div class="tech-detail-section">
+        <h3 class="tech-detail-title">🚀 Business Impact</h3>
+        <p style="color:var(--text-muted); margin-bottom: 20px;">
+          "압도적인 초기 유입과 기록적인 서비스 전환율 달성"
+        </p>
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <span class="metric-value">2,600+</span>
+            <span class="metric-label">Weekly Active Users<br>(15~20% of Students)</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">91.3%</span>
+            <span class="metric-label">Conversion Rate<br>(Visitor → Timetable Created)</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">532K</span>
+            <span class="metric-label">API Requests Handled</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">14.5K</span>
+            <span class="metric-label">User Data Entries</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Dive 2: Technical Details Grid -->
+      <div class="tech-detail-section">
+        <div class="tech-detail-grid">
+
+          <!-- AI Pipeline -->
+          <div class="detail-card">
+            <h4>🤖 AI Data Pipeline</h4>
+            <p class="section-desc">"비정형 학사 자료의 실시간 정형화 및 자동화"</p>
+
+            <div class="pipeline-step">
+              <div class="step-number">1</div>
+              <div>
+                <strong>LLM Parsing (Gemini 2.0)</strong>
+                <div style="font-size:0.85rem; color: #888;">복잡한 시간표(예: [15-116:화(7),금(7B-8)])를 정교한 프롬프트로 JSON
+                  구조화, 수백
+                  가지 예외 케이스(A/B교시, 멀티강의실) 해결.</div>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="step-number">2</div>
+              <div>
+                <strong>Chunk Processing</strong>
+                <div style="font-size:0.85rem; color: #888;">API 응답 지연 방지를 위해 엑셀 데이터를 50행 단위 분할 처리 + 4초 Delay로
+                  Free Tier
+                  Rate Limit(15 RPM) 극복.</div>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="step-number">3</div>
+              <div>
+                <strong>Incremental Update</strong>
+                <div style="font-size:0.85rem; color: #888;">기존 데이터 유실 방지를 위한 차분 저장 로직 구현.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SRE & Performance -->
+          <div class="detail-card">
+            <h4>🛠️ SRE & Performance</h4>
+            <p class="section-desc">"vCPU 2개, RAM 2GB 환경에서 50만 트래픽 무장애 방어"</p>
+
+            <!-- Performance Charts -->
+            <div class="perf-chart-container">
+              <!-- Left: Throughput -->
+              <div class="perf-chart-box">
+                <h4>Throughput (Req/sec)</h4>
+                <div class="chart-row">
+                  <div class="chart-label">
+                    <span>Before</span> <span>6.9 req/s</span>
+                  </div>
+                  <div class="bar-container">
+                    <div class="bar-fill before" style="width: 14%;"></div>
+                  </div>
+                </div>
+                <div class="chart-row">
+                  <div class="chart-label">
+                    <span>After (Optimized)</span> <span style="color:var(--accent-success);">50.5 req/s
+                      (7.3x)</span>
+                  </div>
+                  <div class="bar-container">
+                    <div class="bar-fill after" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Right: Latency -->
+              <div class="perf-chart-box">
+                <h4>Avg Latency (ms)</h4>
+                <div class="chart-row">
+                  <div class="chart-label">
+                    <span>Before</span> <span>14,550ms</span>
+                  </div>
+                  <div class="bar-container">
+                    <div class="bar-fill before" style="width: 100%; background: var(--accent-warn);"></div>
+                  </div>
+                </div>
+                <div class="chart-row">
+                  <div class="chart-label">
+                    <span>After (Optimized)</span> <span style="color:var(--accent-success);">201ms
+                      (1/90)</span>
+                  </div>
+                  <div class="bar-container">
+                    <div class="bar-fill after" style="width: 2%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul style="margin-top: 15px; font-size: 0.9rem;">
+              <li><strong>HikariCP</strong>: 커넥션 풀 5 → 30 상향으로 병목 제거</li>
+              <li><strong>JPA OSIV OFF</strong>: DB 커넥션 점유 시간 최소화</li>
+              <li><strong>Memory</strong>: 53만 건 처리 중 RAM 32%(625MB) 방어 (OOM 차단)</li>
+              <li><strong>Result</strong>: 수강신청 피크(5분 1,600건) 5xx 에러 0건</li>
+            </ul>
+          </div>
+
+          <!-- Observability -->
+          <div class="detail-card">
+            <h4>🌐 Observability & Ops</h4>
+            <ul style="font-size: 0.9rem;">
+              <li><strong>Vercel Pro Observability</strong>: Real Experience Score(RES) 100점 상시 모니터링.</li>
+              <li><strong>Global Edge</strong>: 일본(RES 99점) 등 해외에서도 TTFB 0.02s 성능 보장.</li>
+              <li><strong>Traffic Analysis</strong>: 시간대별 분석으로 오전 8시 피크(1,240건) 패턴 포착 및 자원 배분.</li>
+              <li><strong>IaC (Terraform)</strong>: 전체 인프라를 코드로 관리하여 무료 티어 만료/이전 시 즉시 재현 가능 환경 구축.</li>
+            </ul>
+          </div>
+
+          <!-- Architecture / Tech Stack List -->
+          <div class="detail-card">
+            <h4>💻 Tech Stack Summary</h4>
+            <div style="font-size: 0.9rem; line-height: 1.8;">
+              <div><strong>Frontend</strong>: React, Figma AI (Design), Vercel (Deploy)</div>
+              <div><strong>Backend</strong>: Java 17, Spring Boot 3.2, JPA</div>
+              <div><strong>Database</strong>: PostgreSQL</div>
+              <div><strong>AI</strong>: Google Gemini 2.0 Flash (via Vertex AI)</div>
+              <div><strong>Infra</strong>: GCP Compute Engine, Docker, GitHub Actions</div>
+              <div><strong>Testing</strong>: k6 (Load Testing), JUnit5</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Deep Dive 3: Troubleshooting -->
+      <div class="tech-detail-section">
+        <h3 class="tech-detail-title">🔥 Key Troubleshooting & Challenges</h3>
+        <div class="troubleshoot-grid">
+
+          <!-- Infra -->
+          <div class="ts-card">
+            <div class="ts-header">
+              <span class="ts-icon">🏗️</span>
+              <span class="ts-title">Infra Availability</span>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-problem">Challenge</span>
+              <div class="ts-desc">Docker 강제 종료 시 HikariCP Graceful Shutdown 실패로 좀비 커넥션 잔류 → DB 한도 초과 장애.</div>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-solution">Solution</span>
+              <div class="ts-desc">종료 시그널(SIGTERM) 핸들링 로직 추가 및 HikariCP, Supabase Pooler 설정 최적화로 커넥션 누수
+                <strong>0건</strong> 달성.
+              </div>
+            </div>
+            <div style="margin-top:12px; font-size: 0.85rem; color: #888;">
+              + <strong>Terraform IaC</strong> 도입으로 프리티어 만료 시 재구축 시간 90% 단축.
+            </div>
+          </div>
+
+          <!-- Data -->
+          <div class="ts-card">
+            <div class="ts-header">
+              <span class="ts-icon">🧩</span>
+              <span class="ts-title">Data Integrity</span>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-problem">Challenge</span>
+              <div class="ts-desc">기초교양 과목의 줄임말(예: 독문, 불문)이 실제 학과명과 달라 매핑 데이터 정합성 실패.</div>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-solution">Solution</span>
+              <div class="ts-desc"><strong>Department Mapping Service</strong> 구축. 별도 매핑 테이블을 통해 수동 작업 없이 100%
+                자동 매핑 및
+                배정 정확도 향상.</div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="ts-card">
+            <div class="ts-header">
+              <span class="ts-icon">⚡</span>
+              <span class="ts-title">Performance</span>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-problem">Challenge</span>
+              <div class="ts-desc">실사용 중 필터링 검색 지연 발생 & 로그인 로직에서 JPA 엔티티 노출로 인한 런타임 에러.</div>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-solution">Solution</span>
+              <div class="ts-desc">
+                1. 실행 계획 분석 후 <strong>복합 인덱스(Composite Index)</strong> 적용 (7.3배 검색 최적화).<br>
+                2. <strong>DTO 패턴</strong> 전면 교체로 계층 간 결합도 감소 및 API 안정성 확보.
+              </div>
+            </div>
+          </div>
+
+          <!-- UX -->
+          <div class="ts-card">
+            <div class="ts-header">
+              <span class="ts-icon">🖱️</span>
+              <span class="ts-title">UX & Concurrency</span>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-problem">Challenge</span>
+              <div class="ts-desc">위시리스트 더블 클릭 시 중복 데이터 삽입 오류 발생.</div>
+            </div>
+            <div class="ts-block">
+              <span class="ts-label ts-solution">Solution</span>
+              <div class="ts-desc">프론트엔드/백엔드 양측에 <strong>Debounce & Throttling (0.5s)</strong> 적용. 서버 재시작 없이 즉시
+                이슈 대응하여
+                사용자 경험 보호.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Deep Dive 4: Engineering Deep Dive (Code Spotlight) -->
+      <div class="tech-detail-section">
+        <h3 class="tech-detail-title">Engineering Deep Dive</h3>
+        <!-- 1. Prompt Engineering -->
+        <div class="code-highlight-section">
+          <h4 class="code-title">🧠 AI Pipeline: "Unstructured to Structured"</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            수만 건의 강의 데이터 중 <strong>"복잡한 시간표 패턴"</strong>을 정규식만으로 처리하는 것은 불가능했습니다.<br>
+            Gemini 2.0에게 <strong>Edge Case(A/B교시, 요일 혼합)</strong>를 명확히 학습시켜 파싱 정확도 99.9%를 달성했습니다.
+          </p>
+          <div class="diff-container" style="font-family: monospace;">
+            <span class="code-string">"""
+              다음은 대학교 종합강의시간표 Excel 데이터입니다. 이를 정확하게 JSON 형식으로 파싱해주세요.
+              **중요한 파싱 규칙:**
+              1. 시간표(교시) 형식이 매우 복잡합니다:
+              - [15-116:화(7),금(7B-8)] → 여러 요일, 각각 다른 시간
+              - [15-403:월(7)(8)(9)] → 연속 교시 (괄호만 사용)
+              - [15-201:월(5B-6)] → A, B 접미사 유지 중요
+              2. 강의실 정보는 무시하고, 요일과 교시만 추출하여 timeString에 저장
+              예: [15-116:화(7)] [15-317:월(3)] → "화 7 월 3"
+              응답은 다음과 같은 JSON 배열 형태로만 주세요:
+              [
+              { "subjectName": "영작문(1)", "timeString": "화 7 월 3", "isNight": false, ... }
+              ]
+              """</span>
+          </div>
+        </div>
+        <!-- 2. Infrastructure Troubleshooting -->
+        <div class="code-highlight-section">
+          <h4 class="code-title">🛠️ Connection Pool Tuning</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            동시 접속자 200명 발생 시 <strong>DB 커넥션 고갈(Connection Starvation)</strong>로 인한 장애 발생.<br>
+            Grafana 모니터링 분석 후 HikariCP 설정을 최적화하여 해결했습니다.
+          </p>
+          <div class="diff-container">
+            <span class="diff-line code-comment"># application.yml (Optimization)</span>
+            <span class="diff-line">spring:</span>
+            <span class="diff-line"> datasource:</span>
+            <span class="diff-line"> hikari:</span>
+            <span class="diff-line diff-del">- maximum-pool-size: 5 # Default (Too small)</span>
+            <span class="diff-line diff-add">+ maximum-pool-size: 30 # Calculated based on active threads</span>
+            <span class="diff-line diff-add">+ connection-timeout: 20000 </span>
+            <span class="diff-line diff-add">+ max-lifetime: 600000 # Prevent stale connections</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Projects Grid -->
+    <section id="projects">
+      <h2 class="section-title">Other Projects</h2>
+      <div class="projects-grid">
+
+        <!-- GAIA -->
+        <article class="project-card">
+          <div class="project-header">
+            <svg class="folder-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            <div class="project-links">
+              <a href="https://github.com/capston2025/capston" target="_blank" class="icon-link"><svg width="20"
+                  height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg></a>
+            </div>
+          </div>
+          <h3>GAIA (Agentic Test)</h3>
+          <p>Playwright MCP를 활용해 GUI 테스트를 스스로 계획하고 실행하는 에이전트. DOM 분석과 스크린샷 기반 복구 전략 수립.</p>
+          <div class="tech-stack">
+            <span>Python</span>
+            <span>Playwright</span>
+            <span>MCP</span>
+            <span>LLM Agent</span>
+          </div>
+        </article>
+
+        <!-- OS Contribution -->
+        <article class="project-card">
+          <div class="project-header">
+            <svg class="folder-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            <div class="project-links">
+              <a href="https://github.com/eGovFramework/egovframe-template-simple-backend/pull/88" target="_blank"
+                class="icon-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg></a>
+            </div>
+          </div>
+          <h3>eGovFrame Contribution</h3>
+          <p>전자정부 표준프레임워크의 에러 없는 날짜 변환 로직 개선. NPE 및 파싱 실패 문제 해결 (Merged).</p>
+          <div class="tech-stack">
+            <span>Java</span>
+            <span>Open Source</span>
+            <span>Refactoring</span>
+          </div>
+        </article>
+
+        <!-- GenAI Hack -->
+        <article class="project-card">
+          <div class="project-header">
+            <svg class="folder-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            <div class="project-links">
+              <a href="https://genhack-pied.vercel.app" target="_blank" class="icon-link"><svg width="20" height="20"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg></a>
+              <a href="https://github.com/coldmans/genAI-hack" target="_blank" class="icon-link"><svg width="20"
+                  height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg></a>
+            </div>
+          </div>
+          <h3>GenAI Hackathon</h3>
+          <p>생성형 AI를 활용한 아이디어톤 프로젝트. 빠른 프로토타이핑과 배포.</p>
+          <div class="tech-stack">
+            <span>TypeScript</span>
+            <span>Next.js</span>
+            <span>GenAI</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section id="philosophy">
+      <h2 class="section-title">Engineering Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philo-card">
+          <span class="philo-icon">📊</span>
+          <h3>Driven by Metrics</h3>
+          <p>"측정 없이는 개선도 없다."<br>막연한 추측 대신 k6와 모니터링 툴로 병목 지점을 정확히 파악하고 개선합니다.</p>
+        </div>
+        <div class="philo-card">
+          <span class="philo-icon">🛡️</span>
+          <h3>Defensive Coding</h3>
+          <p>운영 환경의 변수는 예측 불가능합니다.<br>NPE, 파싱 실패 등 예외 케이스를 선제적으로 방어하여 시스템 안정성을 높입니다.</p>
+        </div>
+        <div class="philo-card">
+          <span class="philo-icon">⚡</span>
+          <h3>Resource Efficiency</h3>
+          <p>비용 효율적인 아키텍처를 지향합니다.<br>e2-small 같은 제한된 환경에서도 성능을 극대화하는 튜닝을 즐깁니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Jinhyeong Jang · Built for GitHub Pages</p>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
