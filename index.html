@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
   <title>Jinhyeong Jang | Backend Engineer</title>
   <meta name="description" content="백엔드 엔지니어 장진형 포트폴리오" />
   <meta property="og:title" content="Jinhyeong Jang | Backend Engineer" />
@@ -70,7 +71,7 @@
 
       <div class="links">
         <a class="btn" href="mailto:jinhinjala26@naver.com"><strong>Email</strong><span class="small">jinhinjala26@naver.com</span></a>
-        <a class="btn" href="https://github.com/coldmans" target="_blank" rel="noreferrer"><strong>GitHub</strong><span class="small">@coldmans</span></a>
+        <a class="btn" href="https://github.com/coldmans" target="_blank" rel="noopener noreferrer"><strong>GitHub</strong><span class="small">@coldmans</span></a>
       </div>
     </section>
 
@@ -87,21 +88,21 @@
             <span class="tag">Terraform</span>
           </div>
           <div class="kv">
-            <div class="k">Service</div><div><a href="https://inuu-timetable.vercel.app" target="_blank" rel="noreferrer">inuu-timetable.vercel.app</a></div>
+            <div class="k">Service</div><div><a href="https://inuu-timetable.vercel.app" target="_blank" rel="noopener noreferrer">inuu-timetable.vercel.app</a></div>
             <div class="k">Frontend</div><div>Vercel (Edge Network)</div>
             <div class="k">Backend</div><div>GCP e2-small (2 vCPU / 2GB RAM), Docker</div>
             <div class="k">DB</div><div>PostgreSQL</div>
             <div class="k">Repo</div><div>
-              <a href="https://github.com/coldmans/inu_timetable" target="_blank" rel="noreferrer">inu_timetable</a>
-              · <a href="https://github.com/coldmans/inu-infra" target="_blank" rel="noreferrer">inu-infra</a>
+              <a href="https://github.com/coldmans/inu_timetable" target="_blank" rel="noopener noreferrer">inu_timetable</a>
+              · <a href="https://github.com/coldmans/inu-infra" target="_blank" rel="noopener noreferrer">inu-infra</a>
             </div>
           </div>
           <ul>
             <li><span class="badge good">성과</span>: 런칭 <b>1주일</b> 내 활성 유저 <b>2,600명</b>, 누적 API 요청 <b>532K</b>, 가입자 중 <b>91.3%</b>가 시간표 생성</li>
             <li><span class="badge good">피크 대응</span>: 수강신청 전후 <b>5분 1,600건(분당 320+)</b> 요청에서도 <b>5xx 0건</b></li>
             <li><span class="badge good">성능 최적화</span>: k6 부하테스트 기반 튜닝으로 처리량 <b>7배</b>(6.9→50.5 req/s), 평균 응답시간 <b>14.55s→201ms</b>, 실패율 <b>25.79%→0%</b></li>
-            <li><span class="badge">AI 파이프라인</span>: Gemini 2.0 Flash로 비정형 Excel 텍스트를 구조화(50행 청크+Delay로 Rate Limit 방지), 증분 적재+Validation로 데이터 무결성 확보</li>
-            <li><span class="badge">UX/정합성 개선</span>: 중복 클릭으로 과목이 중복 저장되던 이슈를 분석해 <b>DB 유니크 제약 + 트랜잭션 처리</b>로 근본 해결 (프론트 임시 디바운스 의존 제거)</li>
+            <li><span class="badge good">AI 파이프라인</span>: Gemini 2.0 Flash로 비정형 Excel 텍스트를 구조화(50행 청크+Delay로 Rate Limit 방지), 증분 적재+Validation로 데이터 무결성 확보</li>
+            <li><span class="badge good">UX/정합성 개선</span>: 중복 클릭으로 과목이 중복 저장되던 이슈를 분석해 <b>DB 유니크 제약 + 트랜잭션 처리</b>로 근본 해결 (프론트 임시 디바운스 의존 제거)</li>
           </ul>
         </article>
 
@@ -114,7 +115,7 @@
             <span class="tag">Agent</span>
           </div>
           <div class="kv">
-            <div class="k">Repo</div><div><a href="https://github.com/capston2025/capston" target="_blank" rel="noreferrer">capston2025/capston</a></div>
+            <div class="k">Repo</div><div><a href="https://github.com/capston2025/capston" target="_blank" rel="noopener noreferrer">capston2025/capston</a></div>
           </div>
           <ul>
             <li>Playwright MCP를 사용해 GUI 테스트를 <b>계획/실행</b>하는 에이전트 개발</li>
@@ -131,7 +132,7 @@
             <span class="tag">Error Handling</span>
           </div>
           <div class="kv">
-            <div class="k">PR</div><div><a href="https://github.com/eGovFramework/egovframe-template-simple-backend/pull/88" target="_blank" rel="noreferrer">eGovFramework/egovframe-template-simple-backend#88</a></div>
+            <div class="k">PR</div><div><a href="https://github.com/eGovFramework/egovframe-template-simple-backend/pull/88" target="_blank" rel="noopener noreferrer">eGovFramework/egovframe-template-simple-backend#88</a></div>
           </div>
           <ul>
             <li><b>checkDate</b>: 파싱 실패 시 무응답(false 반환) → <b>log.warn()</b>로 원인 값 추적 가능</li>
@@ -147,8 +148,8 @@
             <span class="tag">Web</span>
           </div>
           <div class="kv">
-            <div class="k">Demo</div><div><a href="https://genhack-pied.vercel.app" target="_blank" rel="noreferrer">genhack-pied.vercel.app</a></div>
-            <div class="k">Repo</div><div><a href="https://github.com/coldmans/genAI-hack" target="_blank" rel="noreferrer">coldmans/genAI-hack</a></div>
+            <div class="k">Demo</div><div><a href="https://genhack-pied.vercel.app" target="_blank" rel="noopener noreferrer">genhack-pied.vercel.app</a></div>
+            <div class="k">Repo</div><div><a href="https://github.com/coldmans/genAI-hack" target="_blank" rel="noopener noreferrer">coldmans/genAI-hack</a></div>
           </div>
           <ul>
             <li>아이디어를 빠르게 구현하고 배포까지 연결한 웹 프로젝트</li>
