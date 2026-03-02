@@ -388,6 +388,17 @@ section {
   flex-grow: 1;
 }
 
+.project-highlights {
+  margin: 0 0 14px 18px;
+  padding: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.project-highlights li {
+  margin-bottom: 6px;
+}
+
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
