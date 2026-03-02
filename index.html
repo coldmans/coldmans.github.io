@@ -456,12 +456,14 @@
             </div>
           </div>
           <h3>GAIA (Agentic Test)</h3>
-          <p>Playwright MCP를 활용해 GUI 테스트를 스스로 계획하고 실행하는 에이전트. DOM 분석과 스크린샷 기반 복구 전략 수립.</p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Playwright</span>
-            <span>MCP</span>
-            <span>LLM Agent</span>
+          <div class="project-detail">
+            <p>Playwright MCP를 활용해 GUI 테스트를 스스로 계획하고 실행하는 에이전트. DOM 분석과 스크린샷 기반 복구 전략 수립.</p>
+            <div class="tech-stack">
+              <span>Python</span>
+              <span>Playwright</span>
+              <span>MCP</span>
+              <span>LLM Agent</span>
+            </div>
           </div>
         </article>
 
@@ -483,11 +485,13 @@
             </div>
           </div>
           <h3>eGovFrame Contribution</h3>
-          <p>전자정부 표준프레임워크의 에러 없는 날짜 변환 로직 개선. NPE 및 파싱 실패 문제 해결 (Merged).</p>
-          <div class="tech-stack">
-            <span>Java</span>
-            <span>Open Source</span>
-            <span>Refactoring</span>
+          <div class="project-detail">
+            <p>전자정부 표준프레임워크의 에러 없는 날짜 변환 로직 개선. NPE 및 파싱 실패 문제 해결 (Merged).</p>
+            <div class="tech-stack">
+              <span>Java</span>
+              <span>Open Source</span>
+              <span>Refactoring</span>
+            </div>
           </div>
         </article>
 
@@ -516,19 +520,21 @@
             </div>
           </div>
           <h3>GenAI Hackathon — 소상공인 정책 알림/상담 서비스</h3>
-          <p>정책 데이터 수집부터 AI 분류·개인화 추천·상담 UI까지 연결한 실전형 GenAI 프로토타입. Vercel Serverless + Supabase 구조로 빠르게 배포/검증.</p>
-          <ul class="project-highlights">
-            <li>네이버 뉴스 크롤링 → 키워드 정제 → Gemini 관련성 분석 → 정책 카테고리화 파이프라인 구현</li>
-            <li>업종/지역/관심사/사업규모 기반 점수화 로직으로 사용자 맞춤 Top N 정책 추천</li>
-            <li>온보딩 프로필, 수동 새로고침(크롤링 트리거), 브라우저 알림으로 사용자 액션 루프 설계</li>
-            <li>정책 분석 데모/퀴즈/상담 탭 구성으로 서비스 컨셉 검증 가능한 MVP 완성</li>
-          </ul>
-          <div class="tech-stack">
-            <span>React + TypeScript + Vite</span>
-            <span>Vercel Serverless API</span>
-            <span>Supabase</span>
-            <span>Gemini API</span>
-            <span>Cheerio Crawler</span>
+          <div class="project-detail">
+            <p>정책 데이터 수집부터 AI 분류·개인화 추천·상담 UI까지 연결한 실전형 GenAI 프로토타입. Vercel Serverless + Supabase 구조로 빠르게 배포/검증.</p>
+            <ul class="project-highlights">
+              <li>네이버 뉴스 크롤링 → 키워드 정제 → Gemini 관련성 분석 → 정책 카테고리화 파이프라인 구현</li>
+              <li>업종/지역/관심사/사업규모 기반 점수화 로직으로 사용자 맞춤 Top N 정책 추천</li>
+              <li>온보딩 프로필, 수동 새로고침(크롤링 트리거), 브라우저 알림으로 사용자 액션 루프 설계</li>
+              <li>정책 분석 데모/퀴즈/상담 탭 구성으로 서비스 컨셉 검증 가능한 MVP 완성</li>
+            </ul>
+            <div class="tech-stack">
+              <span>React + TypeScript + Vite</span>
+              <span>Vercel Serverless API</span>
+              <span>Supabase</span>
+              <span>Gemini API</span>
+              <span>Cheerio Crawler</span>
+            </div>
           </div>
         </article>
 
@@ -641,6 +647,13 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.project-card').forEach((card) => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        card.classList.toggle('expanded');
+      });
+    });
   </script>
 </body>
 
