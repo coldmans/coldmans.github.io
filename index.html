@@ -523,10 +523,14 @@
           <div class="project-detail">
             <p>정책 데이터 수집부터 AI 분류·개인화 추천·상담 UI까지 연결한 실전형 GenAI 프로토타입. Vercel Serverless + Supabase 구조로 빠르게 배포/검증.</p>
             <ul class="project-highlights">
-              <li>네이버 뉴스 크롤링 → 키워드 정제 → Gemini 관련성 분석 → 정책 카테고리화 파이프라인 구현</li>
-              <li>업종/지역/관심사/사업규모 기반 점수화 로직으로 사용자 맞춤 Top N 정책 추천</li>
-              <li>온보딩 프로필, 수동 새로고침(크롤링 트리거), 브라우저 알림으로 사용자 액션 루프 설계</li>
-              <li>정책 분석 데모/퀴즈/상담 탭 구성으로 서비스 컨셉 검증 가능한 MVP 완성</li>
+              <li><strong>Architecture:</strong> Crawler(Cheerio) → Gemini 분류(1.5 Flash) → Supabase upsert → 사용자 맞춤 추천 API → React UI</li>
+              <li><strong>Serverless API:</strong> /api/crawl, /api/policies, /api/quiz 엔드포인트를 Vercel Functions로 구성</li>
+              <li><strong>Personalization:</strong> 업종/지역/관심사/사업규모 점수화 + 타지역 정책 감점(negative filtering)으로 Top N 추천</li>
+              <li><strong>Reliability:</strong> Gemini API 키 미설정 시 fallback, DB 오류 시 안전 응답(빈 배열) 처리</li>
+              <li><strong>Data Integrity:</strong> Supabase upsert(onConflict: url)로 중복 저장 방지</li>
+              <li><strong>UX Loop:</strong> 온보딩(localStorage), 5분 자동 새로고침, 수동 크롤링 트리거, 브라우저 알림</li>
+              <li><strong>Optimization:</strong> 1차 키워드 필터 후 상위 후보만 AI 분석해 비용/지연 최소화</li>
+              <li><strong>My Role:</strong> 기획 · 프론트 · 서버리스 API · AI 필터링 로직 통합 · 배포</li>
             </ul>
             <div class="tech-stack">
               <span>React + TypeScript + Vite</span>
